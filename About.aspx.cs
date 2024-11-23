@@ -13,5 +13,18 @@ namespace PcesRepair
         {
 
         }
+
+        protected void btnCrear_Click(object sender, EventArgs e)
+        {
+            if (Page.IsValid)
+            {
+                // Lógica para crear el ticket aquí
+                Response.Write("El ticket se ha creado exitosamente.");
+            }
+            else
+            {
+                Response.Write("Hay errores en el formulario. Por favor, corrígelos.");
+            }
+        }
     }
 }

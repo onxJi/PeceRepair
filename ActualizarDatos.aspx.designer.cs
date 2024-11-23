@@ -11,62 +11,17 @@ namespace PcesRepair
 {
 
 
-    public partial class About
+    public partial class ActualizarDatos
     {
 
         /// <summary>
-        /// Control txtNombre.
+        /// Control vsErroresActualizar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNombre;
-
-        /// <summary>
-        /// Control rfvNombre.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvNombre;
-
-        /// <summary>
-        /// Control revNombre.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator revNombre;
-
-        /// <summary>
-        /// Control txtRut.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtRut;
-
-        /// <summary>
-        /// Control rfvRut.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvRut;
-
-        /// <summary>
-        /// Control revRut.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator revRut;
+        protected global::System.Web.UI.WebControls.ValidationSummary vsErroresActualizar;
 
         /// <summary>
         /// Control txtTelefono.
@@ -78,13 +33,13 @@ namespace PcesRepair
         protected global::System.Web.UI.WebControls.TextBox txtTelefono;
 
         /// <summary>
-        /// Control rfvTelefono.
+        /// Control rfvTelefonoActualizar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvTelefono;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvTelefonoActualizar;
 
         /// <summary>
         /// Control txtEmail.
@@ -96,40 +51,22 @@ namespace PcesRepair
         protected global::System.Web.UI.WebControls.TextBox txtEmail;
 
         /// <summary>
-        /// Control rfvEmail.
+        /// Control rfvEmailActualizar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvEmail;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvEmailActualizar;
 
         /// <summary>
-        /// Control revEmail.
+        /// Control revEmailActualizar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator revEmail;
-
-        /// <summary>
-        /// Control ddlTipoCliente.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlTipoCliente;
-
-        /// <summary>
-        /// Control rfvTipoCliente.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvTipoCliente;
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator revEmailActualizar;
 
         /// <summary>
         /// Control txtProducto.
@@ -141,22 +78,22 @@ namespace PcesRepair
         protected global::System.Web.UI.WebControls.TextBox txtProducto;
 
         /// <summary>
-        /// Control rfvProducto.
+        /// Control rfvProductoActualizar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvProducto;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvProductoActualizar;
 
         /// <summary>
-        /// Control revProducto.
+        /// Control revProductoActualizar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator revProducto;
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator revProductoActualizar;
 
         /// <summary>
         /// Control txtDescripcion.
@@ -168,39 +105,30 @@ namespace PcesRepair
         protected global::System.Web.UI.WebControls.TextBox txtDescripcion;
 
         /// <summary>
-        /// Control rfvDescripcion.
+        /// Control rfvDescripcionActualizar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvDescripcion;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvDescripcionActualizar;
 
         /// <summary>
-        /// Control revDescripcion.
+        /// Control revDescripcionActualizar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator revDescripcion;
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator revDescripcionActualizar;
 
         /// <summary>
-        /// Control btnCrear.
+        /// Control btnActualizar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnCrear;
-
-        /// <summary>
-        /// Control vsErrores.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ValidationSummary vsErrores;
+        protected global::System.Web.UI.WebControls.Button btnActualizar;
     }
 }

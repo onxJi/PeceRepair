@@ -48,5 +48,11 @@
     <Compile Include="Ticket.cs" />
     <Compile Include="TicketController.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CapaDatos\CapaDatos.csproj">
+      <Project>{1373e906-67d5-42d1-bfcb-8a4b52aeef00}</Project>
+      <Name>CapaDatos</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
