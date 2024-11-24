@@ -10,5 +10,6 @@ namespace CapaDatos
     {
         public string RazonSocial { get; set; }
 
+
     }
 }

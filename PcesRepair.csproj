@@ -262,6 +262,12 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="CapaModelos\CapaModelos.csproj">
+      <Project>{d2d45d82-b953-43bc-9e5c-c289e8db4b05}</Project>
+      <Name>CapaModelos</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

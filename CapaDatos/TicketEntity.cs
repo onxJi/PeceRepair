@@ -19,5 +19,10 @@ namespace CapaDatos
         {
             return _createdAt;
         }
+
+        public string getValor()
+        {
+            return $"Cliente: {Cliente.getValor()}, Producto: {Producto}, Descripción: {Descripcion}, Estado: {Estado}, Id: {Id}, Creado en: {_createdAt}";
+        }
     }
 }

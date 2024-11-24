@@ -14,5 +14,10 @@ namespace CapaDatos
         public string Telefono { get; set; }
         public string Email { get; set; }
 
+        public string getValor()
+        {
+            return $"Nombre: {Nombre}, Rut: {Rut}, Teléfono: {Telefono}, Email: {Email}, Id: {Id}";
+        }
+
     }
 }

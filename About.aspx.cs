@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Configuration;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using CapaModelos;
 
 namespace PcesRepair
 {
@@ -16,15 +18,26 @@ namespace PcesRepair
 
         protected void btnCrear_Click(object sender, EventArgs e)
         {
-            if (Page.IsValid)
+            Cliente cliente = new Cliente
             {
-                // Lógica para crear el ticket aquí
-                Response.Write("El ticket se ha creado exitosamente.");
-            }
-            else
+                Id = Guid.NewGuid().ToString(),
+                Nombre = txtNombre.Text.Trim(),
+                Rut = txtRut.Text,
+                Telefono = txtTelefono.Text,
+                Email = txtEmail.Text
+            };
+            Ticket ticket = new Ticket
             {
-                Response.Write("Hay errores en el formulario. Por favor, corrígelos.");
-            }
+                Id = Guid.NewGuid().ToString(),
+                Cliente = cliente,
+                Producto = txtProducto.Text,
+                Descripcion = txtDescripcion.Text,
+                Estado = ddlTipoCliente.SelectedValue
+            };
+
+         
+            string mensaje = TicketController.Create(ticket);
+            lblMensaje.Text = mensaje;
         }
     }
 }

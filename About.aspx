@@ -93,9 +93,11 @@
         <!-- Botón de Crear -->
         <div class="text-end mt-3">
             <asp:Button ID="btnCrear" runat="server" Text="Crear Ticket" CssClass="btn btn-primary"
-                ValidationGroup="vgCrearTicket" />
+                ValidationGroup="vgCrearTicket"  OnClick="btnCrear_Click"/>
         </div>
-
+        <div class="text-end mt-3">
+            <asp:Label ID="lblMensaje" runat="server" CssClass="text-success mt-3" />
+        </div>
         <!-- Resumen de Validación -->
         <asp:ValidationSummary ID="vsErrores" runat="server" HeaderText="Errores:"
             DisplayMode="BulletList" ValidationGroup="vgCrearTicket" CssClass="text-danger mt-3" />

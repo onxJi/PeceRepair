@@ -13,46 +13,82 @@ namespace CapaModelos
 
         public static string Create(Ticket ticket)
         {
-            // Transformación de negocio a datos
-            ClienteEntity clienteEntity;
-            if (ticket.Cliente is Empresa empresa)
+            // Validar que el ticket no sea nulo
+            if (ticket == null)
             {
-                clienteEntity = new EmpresaEntity
-                {
-                    Nombre = empresa.Nombre,
-                    Rut = empresa.Rut,
-                    Telefono = empresa.Telefono,
-                    Email = empresa.Email,
-                    RazonSocial = empresa.RazonSocial
-                };
+                return "El ticket no puede ser nulo.";
             }
-            else if (ticket.Cliente is PersonaNatural persona)
+
+            // Validar que el estado sea válido
+            if (string.IsNullOrEmpty(ticket.Estado))
             {
+                return "El estado del cliente es obligatorio.";
+            }
+
+            // Transformar datos del ticket según el tipo de cliente
+            ClienteEntity clienteEntity;
+
+            if (ticket.Estado.Equals("Empresa", StringComparison.OrdinalIgnoreCase))
+            {
+                // Asegúrate de que el ticket tiene los datos necesarios para una empresa
+                if (ticket.Cliente is Empresa empresa)
+                {
+                    clienteEntity = new EmpresaEntity
+                    {
+                        Nombre = empresa.Nombre,
+                        Rut = empresa.Rut,
+                        Telefono = empresa.Telefono,
+                        Email = empresa.Email,
+                        RazonSocial = empresa.RazonSocial
+                    };
+                }
+                else
+                {
+                    return "Los datos de la empresa son inválidos.";
+                }
+            }
+            else if (ticket.Estado.Equals("PersonaNatural", StringComparison.OrdinalIgnoreCase))
+            {
+
                 clienteEntity = new PersonaNaturalEntity
                 {
-                    Nombre = persona.Nombre,
-                    Rut = persona.Rut,
-                    Telefono = persona.Telefono,
-                    Email = persona.Email
+                       
+                    Nombre = ticket.Cliente.Nombre,
+                    Rut = ticket.Cliente.Rut,
+                    Telefono = ticket.Cliente.Telefono,
+                    Email = ticket.Cliente.Email
                 };
+
             }
             else
             {
-                return "Tipo de cliente no válido";
+                return "El tipo de cliente no es válido.";
             }
 
+            // Crear entidad de ticket
             var ticketEntity = new TicketEntity
             {
                 Id = ticket.Id,
                 Producto = ticket.Producto,
                 Descripcion = ticket.Descripcion,
                 Estado = ticket.Estado,
-                Cliente = clienteEntity
+                Cliente = clienteEntity // Asignar el cliente dinámicamente
             };
 
+            // Guardar en la base de datos o en la colección
             ticketData.Add(ticketEntity);
-            return "Ticket creado con éxito";
+
+            var mensaje = new StringBuilder();
+            mensaje.AppendLine("Lista de tickets creados:");
+
+            foreach (var t in ticketData)
+            {
+                mensaje.AppendLine(t.getValor());
+            }
+
+            return mensaje.ToString();
         }
+
 
         public static Ticket Read(string id)
         {
