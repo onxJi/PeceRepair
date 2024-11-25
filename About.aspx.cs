@@ -15,12 +15,25 @@ namespace PcesRepair
         {
 
         }
+        protected void ddlTipoCliente_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+            if (ddlTipoCliente.SelectedValue == "Empresa")
+            {
+                txtrazonSocial.Enabled = true; 
+            }
+            else
+            {
+                txtrazonSocial.Enabled = false;  
+                txtrazonSocial.Text = ""; // Limpia el campo
+            }
+        }
 
         protected void btnCrear_Click(object sender, EventArgs e)
         {
             Cliente cliente = new Cliente
             {
-                Id = Guid.NewGuid().ToString(),
+                
                 Nombre = txtNombre.Text.Trim(),
                 Rut = txtRut.Text,
                 Telefono = txtTelefono.Text,

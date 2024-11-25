@@ -75,7 +75,7 @@ namespace CapaModelos
                 Cliente = clienteEntity // Asignar el cliente dinámicamente
             };
 
-            // Guardar en la base de datos o en la colección
+            // Guardar en la colección
             ticketData.Add(ticketEntity);
 
             var mensaje = new StringBuilder();

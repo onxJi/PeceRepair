@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CapaModelos;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,28 +12,62 @@ namespace PcesRepair
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+            {
+                // Recuperar el UUID desde la URL
+                string uuid = Request.QueryString["uuid"];
+                if (!string.IsNullOrEmpty(uuid))
+                {
+                    // Buscar el ticket utilizando el método Read del TicketController
+                    var ticket = TicketController.Read(uuid);
+                    if (ticket != null)
+                    {
+                        // datos del ticket a los controles TextBox
+                        txtTelefono.Text = ticket.Cliente.Telefono;
+                        txtEmail.Text = ticket.Cliente.Email;
+                        txtProducto.Text = ticket.Producto;
+                        txtDescripcion.Text = ticket.Descripcion;
+                    }
+                    else
+                    {
+                        // caso en que no se encuentre el ticket
+                        lblMensaje.Text = "No se encontró el ticket con el UUID especificado.";
+                        lblMensaje.CssClass = "text-danger";
+                    }
+                }
+                else
+                {
+                    // caso en que no se reciba un UUID válido
+                    lblMensaje.Text = "No se proporcionó un UUID válido.";
+                    lblMensaje.CssClass = "text-danger";
+                }
+            }
         }
 
         protected void btnActualizar_Click(object sender, EventArgs e)
         {
-            // Validación a nivel de servidor
-            if (Page.IsValid)
+            // Recuperar el UUID desde la URL
+            string uuid = Request.QueryString["uuid"];
+            if (!string.IsNullOrEmpty(uuid))
             {
-                // Aquí implementas la lógica para actualizar el ticket
-                // Ejemplo: Guardar en la base de datos
-                // string telefono = txtTelefono.Text;
-                // string email = txtEmail.Text;
-                // string producto = txtProducto.Text;
-                // string descripcion = txtDescripcion.Text;
+                // valores actualizados de los controles TextBox
+                string telefono = txtTelefono.Text.Trim();
+                string email = txtEmail.Text.Trim();
+                string producto = txtProducto.Text.Trim();
+                string descripcion = txtDescripcion.Text.Trim();
+                string estado = "Actualizado"; 
 
-                // Redirigir o mostrar un mensaje de éxito
-                Response.Write("<script>alert('Ticket actualizado exitosamente');</script>");
+                // Actualizar el ticket 
+                string resultado = TicketController.Update(uuid, producto, descripcion, estado, email, telefono);
+
+                // Mostrar un mensaje de éxito o error
+                lblMensaje.Text = resultado;
+                lblMensaje.CssClass = resultado.Contains("éxito") ? "text-success" : "text-danger";
             }
             else
             {
-                // Mostrar mensaje de validación si no se cumple alguna regla
-                Response.Write("<script>alert('Por favor, corrija los errores antes de continuar.');</script>");
+                lblMensaje.Text = "No se puede actualizar el ticket debido a un UUID inválido.";
+                lblMensaje.CssClass = "text-danger";
             }
         }
     }

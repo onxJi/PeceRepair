@@ -1,6 +1,7 @@
 ﻿<%@ Page Title="Reparacion-Crear" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="About.aspx.cs" Inherits="PcesRepair.About" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
+
   <div class="container mt-4">
     <!-- Datos del Cliente -->
     <h2>Datos del Cliente</h2>
@@ -54,15 +55,25 @@
             <!-- Tipo de Cliente -->
             <div class="col-md-6 mb-3">
                 <label for="ddlTipoCliente" class="form-label">Tipo de Cliente:</label>
-                <asp:DropDownList ID="ddlTipoCliente" runat="server" CssClass="form-control">
+                <asp:DropDownList ID="ddlTipoCliente" runat="server" CssClass="form-control" OnSelectedIndexChanged="ddlTipoCliente_SelectedIndexChanged">
                     <asp:ListItem Text="Seleccionar" Value="" />
                     <asp:ListItem Text="Persona Natural" Value="PersonaNatural" />
                     <asp:ListItem Text="Empresa" Value="Empresa" />
                 </asp:DropDownList>
                 <asp:RequiredFieldValidator ID="rfvTipoCliente" runat="server" ControlToValidate="ddlTipoCliente"
                     InitialValue="" ErrorMessage="Debe seleccionar un tipo de cliente." CssClass="text-danger" ValidationGroup="vgCrearTicket" />
+
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="txtrazonSocial" class="form-label">Razón Social:</label>
+              <asp:TextBox 
+                  ID="txtrazonSocial" 
+                  runat="server" 
+                  CssClass="form-control" ></asp:TextBox>
             </div>
         </div>
+
+
 
         <!-- Datos del Ticket -->
         <h2 class="mt-4">Datos del Ticket</h2>
@@ -105,3 +116,6 @@
 </div>
 
 </asp:Content>
+
+
+

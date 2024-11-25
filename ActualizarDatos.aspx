@@ -2,6 +2,7 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <h2>Actualizar Ticket</h2>
+    <asp:Label ID="lblMensaje" runat="server" CssClass="text-info"></asp:Label>
     <asp:ValidationSummary ID="vsErroresActualizar" runat="server" HeaderText="Errores encontrados:" 
         DisplayMode="BulletList" ValidationGroup="vgActualizarTicket" />
 
@@ -63,3 +64,4 @@
             OnClick="btnActualizar_Click" ValidationGroup="vgActualizarTicket" />
     </div>
 </asp:Content>
+

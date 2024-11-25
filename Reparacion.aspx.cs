@@ -14,18 +14,18 @@ namespace PcesRepair
 
 		}
 
-        // Método para manejar el evento OnClick del botón "Crear Formulario"
+        //"Crear Formulario"
         protected void btnNuevoFormulario_Click(object sender, EventArgs e)
         {
-            // Redirecciona a la página de creación de formulario
+            // página de creación de formulario
             Response.Redirect("~/About.aspx");
         }
 
-        // Método para manejar el evento OnClick del botón "Actualizar Datos"
+        
         protected void btnActualizarDatos_Click(object sender, EventArgs e)
         {
-            // Redirecciona a la página de actualización de datos
-            Response.Redirect("~/ActualizarDatos.aspx");
+            // página de actualización de datos
+            Response.Redirect("~/BuscarTicket.aspx");
         }
     }
 }

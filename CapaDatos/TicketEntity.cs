@@ -22,7 +22,7 @@ namespace CapaDatos
 
         public string getValor()
         {
-            return $"Cliente: {Cliente.getValor()}, Producto: {Producto}, Descripción: {Descripcion}, Estado: {Estado}, Id: {Id}, Creado en: {_createdAt}";
+            return $" Id: {Id}, Producto: {Producto}, Descripción: {Descripcion}, Estado: {Estado}, Creado en: {_createdAt}";
         }
     }
 }
